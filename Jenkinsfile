@@ -12,7 +12,7 @@ pipeline {
                     }
             }
          stage('Second') { 
-             when { environment name:'EXECUTE', value: 'True'}
+             when { environment name: 'EXECUTE', value: 'True'}
               steps {
                   
                   echo "Updating Second Stage"
@@ -21,7 +21,7 @@ pipeline {
               }
             }
          stage ('Third') {
-             when { environment name:'EXECUTE', value: 'True' } 
+             when { environment name: 'EXECUTE', value: 'True' } 
               steps { sh """echo 'Step Three' """}
                   }
           }
