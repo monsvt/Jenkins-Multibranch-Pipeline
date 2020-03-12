@@ -13,7 +13,7 @@ pipeline {
                     }
             }
          stage('Second') { 
-             when { expression { EXECUTE } }
+             when { expression { EXECUTE = true } }
               steps {
                   
                   echo "Updating Second Stage"
@@ -22,7 +22,7 @@ pipeline {
               }
             }
          stage ('Third') {
-             when { expression { EXECUTE } } 
+             when { expression { EXECUTE = true } } 
               steps { sh """echo 'Step Three' """ }
                   }
           }
