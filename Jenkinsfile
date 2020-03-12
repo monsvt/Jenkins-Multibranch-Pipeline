@@ -4,7 +4,7 @@ pipeline {
     stages {
          stage('First') {
              environment{
-                EXECUTE = true
+                env.EXECUTE = true
              }
               steps {
                   
@@ -13,7 +13,7 @@ pipeline {
                     }
             }
          stage('Second') { 
-             when { expression { EXECUTE } }
+             when { expression { env.EXECUTE } }
               steps {
                   
                   echo "Updating Second Stage"
@@ -22,7 +22,7 @@ pipeline {
               }
             }
          stage ('Third') {
-             when { expression { EXECUTE == false } } 
+             when { expression { env.EXECUTE == false } } 
               steps { sh """echo 'Step Three' """ }
                   }
           }
