@@ -26,5 +26,5 @@ pipeline {
              when { expression { EXECUTE == false } } 
               steps { sh """echo 'Step Three' """ }
                   }
-          }
-
+        }
+}
