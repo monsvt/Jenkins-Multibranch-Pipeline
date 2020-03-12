@@ -13,7 +13,7 @@ pipeline {
                     }
             }
          stage('Second') { 
-             when { expression { env.EXECUTE } }
+             when { expression { EXECUTE } }
               steps {
                   
                   echo "Updating Second Stage"
@@ -22,7 +22,7 @@ pipeline {
               }
             }
          stage ('Third') {
-             when { expression { env.EXECUTE == false } } 
+             when { expression { EXECUTE == false } } 
               steps { sh """echo 'Step Three' """ }
                   }
           }
