@@ -14,7 +14,7 @@ pipeline {
                     }
             }
          stage('Second') { 
-             when { expression EXECUTE } }
+             when { expression { EXECUTE } }
               steps {
                   
                   echo "Updating Second Stage"
