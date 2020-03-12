@@ -1,5 +1,4 @@
-
-            pipeline {
+pipeline {
     agent any 
     stages {
          stage('First') {
@@ -22,7 +21,7 @@
               }
             }
          stage ('Third') {
-             when { expression {return EXECUTE} } 
+             when { environment name:'EXECUTE', value: 'True' } 
               steps { sh """echo 'Step Three' """}
                   }
           }
