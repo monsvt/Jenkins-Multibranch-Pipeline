@@ -4,13 +4,13 @@ pipeline {
          stage('First') {
               steps {
                   script {
-                  EXECUTE = True
+                  EXECUTE = 'True'
                   sh """echo 'Step One' """
                   }
                     }
             }
          stage('Second') { 
-             when { $EXECUTE == True }
+             when { ${env.EXECUTE} }
               steps {
                   script {
                   echo "Updating Second Stage"
@@ -20,7 +20,7 @@ pipeline {
               }
             }
          stage ('Third') {
-             when { $EXECUTE != False } 
+             when { ${env.EXECUTE} } 
               steps { sh """echo 'Step Three' """}
                   }
           }
