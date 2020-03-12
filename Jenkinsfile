@@ -1,4 +1,5 @@
-pipeline {
+
+            pipeline {
     agent any 
     stages {
          stage('First') {
@@ -12,7 +13,7 @@ pipeline {
                     }
             }
          stage('Second') { 
-             when { environment EXECUTE: 'True' }
+             when { environment name:'EXECUTE', value: 'True'}
               steps {
                   
                   echo "Updating Second Stage"
